@@ -128,7 +128,6 @@ public class Program {
         int maxReadingTime = Integer.parseInt(scanner.nextLine());
 
         List<Book> booksByTime = bookRegister.getBooksByReadingTime(maxReadingTime);
-        System.out.println("booksByTime.size():"+booksByTime.size());
         if (booksByTime.isEmpty()) {
             System.out.println("No books can be read within " + maxReadingTime + " minutes.");
         } else {
