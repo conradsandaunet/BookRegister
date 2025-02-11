@@ -11,10 +11,6 @@ public class BookRegister {
 
     public void addBook(Book b) {books.add(b);}
 
-    public int registeredBooks() {
-        return books.size();
-    }
-
     public void allRegisteredBooks() {
 
         for (Book b: books) {

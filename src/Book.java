@@ -7,7 +7,6 @@ public class Book {
     private int numberOfPages;
     private Genre genre;
     private ArrayList<Chapter> chapters;
-    private String isbn;
     private LocalDate published;
     private int minutesPerPage;
 
@@ -52,6 +51,7 @@ public class Book {
                 + ", Pages: " + numberOfPages + ", Minutes Per Page: " + minutesPerPage;
     }
 
+    /*
     public void addChapter(Chapter chapter) {
         this.chapters.add(chapter);
     }
@@ -59,7 +59,7 @@ public class Book {
     public ArrayList<Chapter> getChapters() {
         return chapters;
     }
-
+*/
     public int getMinutesPerPage() {
         return minutesPerPage;
     }
