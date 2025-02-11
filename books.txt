@@ -1,0 +1,3 @@
+Mistborn;Brandon Sanderson;666;FANTASY;4
+The Shining;Stephen King;320;UNKNOWN;3
+Reacher;Lee Child;475;ACTION;2
