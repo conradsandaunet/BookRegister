@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Program {
     private BookRegister bookRegister;
     private Scanner scanner;
+    Boolean running = true;
 
     public Program() {
         this.bookRegister = new BookRegister();
@@ -15,7 +16,6 @@ public class Program {
     }
 
     public void run() {
-        Boolean running = true;
 
         while (running) {
             System.out.println("\n--- Book Register Menu ---");
@@ -49,8 +49,7 @@ public class Program {
                     displayBooksByAuthor();
                     break;
                 case 7:
-                    running = false;
-                    System.out.println("Goodbye!");
+                    quit();
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -92,8 +91,6 @@ public class Program {
 
         bookRegister.addBook(book);
         System.out.println("Book added successfully: " + book);
-
-        bookRegister.writeBookToFile("books.txt");
 
     }
 
@@ -168,6 +165,15 @@ public class Program {
         } catch (IllegalArgumentException e) {
             System.out.println("Invalid author. Please try again.");
         }
+    }
+
+    public void quit() {
+
+        running = false;
+        bookRegister.writeBookToFile("books.txt");
+        System.out.println("Goodbye!");
+
+
     }
 }
 

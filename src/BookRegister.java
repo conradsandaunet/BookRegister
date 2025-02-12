@@ -60,8 +60,8 @@ public class BookRegister {
     public void writeBookToFile(String filename) {
         try (FileWriter writer = new FileWriter(filename)) {
             for (Book book : books) {
-                writer.write(book.getTitle() + ";" + book.getAuthor() + ";" + book.getNumberOfPages() + ";"
-                + book.getGenre() + ";" + book.getMinutesPerPage() + "\n");
+                writer.write("Title: " + book.getTitle() + "|" + "Author: " + book.getAuthor() + "|" + "Pages: " + book.getNumberOfPages() + "|"
+                + "Genre: " + book.getGenre() + "|" + "Minutes per page: " + book.getMinutesPerPage() + "\n");
             }
             System.out.println("Books succesfully written to file: " + filename);
         } catch (IOException e) {

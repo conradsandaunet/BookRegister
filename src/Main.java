@@ -11,6 +11,5 @@ public class Main {
         Program program = new Program();
         program.setBookRegister(br);
         program.run();
-
     }
 }
