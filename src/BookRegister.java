@@ -60,8 +60,11 @@ public class BookRegister {
     public void writeBookToFile(String filename) {
         try (FileWriter writer = new FileWriter(filename)) {
             for (Book book : books) {
-                writer.write("Title: " + book.getTitle() + "|" + "Author: " + book.getAuthor() + "|" + "Pages: " + book.getNumberOfPages() + "|"
-                + "Genre: " + book.getGenre() + "|" + "Minutes per page: " + book.getMinutesPerPage() + "\n");
+                writer.write(book.getTitle() + ";"
+                        + book.getAuthor() + ";"
+                        + book.getNumberOfPages() + ";"
+                        + book.getGenre() + ";"
+                        + book.getMinutesPerPage() + "\n");
             }
             System.out.println("Books succesfully written to file: " + filename);
         } catch (IOException e) {
@@ -77,13 +80,13 @@ public class BookRegister {
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(";");
                 if (parts.length == 5) {
-                    Book book = new Book();
-                    book.setTitle(parts[0]);
-                    book.setAuthor(parts[1]);
-                    book.setNumberOfPages(Integer.parseInt(parts[2]));
-                    book.setGenre(Genre.valueOf(parts[3]));
-                    book.setMinutesPerPage(Integer.parseInt(parts[4]));
-
+                    Book book = new Book(
+                            parts[0],
+                            parts[1],
+                            Integer.parseInt(parts[2]),
+                            Genre.valueOf(parts[3]),
+                            Integer.parseInt(parts[4])
+                    );
                     books.add(book);
                 }
             }

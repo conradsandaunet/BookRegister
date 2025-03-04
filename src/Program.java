@@ -58,7 +58,6 @@ public class Program {
 
     }
 
-
     private void addBook() {
         System.out.println("Enter the title of the book:");
         String title = scanner.nextLine();
@@ -72,22 +71,18 @@ public class Program {
         System.out.println("Enter minutes per page:");
         int minutesPerPage = Integer.parseInt(scanner.nextLine());
 
-        Book book = new Book();
-        book.setTitle(title);
-        book.setAuthor(author);
-        book.setNumberOfPages(numberOfPages);
-        book.setMinutesPerPage(minutesPerPage);
+        Genre genre = Genre.UNKNOWN;
 
         System.out.println("Select the genre of the book (FANTASY, ACTION, etc.:");
         String genreInput = scanner.nextLine().toUpperCase();
 
         try {
-            Genre genre = Genre.valueOf(genreInput);
-            book.setGenre(genre);
+            genre = Genre.valueOf(genreInput);
         } catch (IllegalArgumentException e) {
             System.out.println("Invalid genre. Defaulting to 'UNKNOWN'.");
-            book.setGenre(Genre.UNKNOWN);
         }
+
+        Book book = new Book(title, author, numberOfPages, genre, minutesPerPage);
 
         bookRegister.addBook(book);
         System.out.println("Book added successfully: " + book);
@@ -172,7 +167,6 @@ public class Program {
         running = false;
         bookRegister.writeBookToFile("books.txt");
         System.out.println("Goodbye!");
-
 
     }
 }

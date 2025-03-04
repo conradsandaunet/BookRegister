@@ -1,3 +1,2 @@
-Title: The Shining|Author: Stephen King|Pages: 444|Genre: UNKNOWN|Minutes per page: 3
-Title: Mistborn|Author: Brandon Sanderson|Pages: 555|Genre: FANTASY|Minutes per page: 5
-Title: Reacher|Author: Lee Child|Pages: 345|Genre: ACTION|Minutes per page: 4
+Harry Potter;J.K Rowling;333;FANTASY;2
+Reacher;Lee Child;444;ACTION;3
